@@ -1,0 +1,12 @@
+{
+    "image": "person_seated.jpg",
+    "person_detected": true,
+    "description": "The image shows a young man standing on a white scale in a living room. He is wearing a blue plaid button-down shirt and blue jeans. He has short dark hair and is looking off to the side with a serious expression on his face. In the background, there are four people sitting on a beige couch, two men and two women, and a coffee table with red cups and water bottles. There is also a plant in the corner of the room.",
+    "person_attributes": {
+        "pose_category": "side",
+        "upper_body_visible": true,
+        "lower_body_visible": true
+    },
+    "model_used": "Florence-2-base",
+    "confidence_notes": "Edge case evaluation."
+}

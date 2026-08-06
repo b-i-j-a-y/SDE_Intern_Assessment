@@ -1,0 +1,7 @@
+{
+    "image": "no_person.jpg",
+    "person_detected": false,
+    "description": "The image shows a close-up of a variety of fruits arranged on a blue surface. In the center of the image, there is an orange cut in half, revealing its juicy orange flesh. Next to it, there are two slices of kiwi, a lime, and a yellow banana. The background is blurred, but it appears to be a purple and white patterned fabric. The fruits are arranged in a way that creates a colorful and vibrant display.",
+    "model_used": "Florence-2-base",
+    "confidence_notes": "No visible person detected."
+}

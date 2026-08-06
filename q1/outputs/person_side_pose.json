@@ -1,0 +1,12 @@
+{
+    "image": "person_side_pose.jpg",
+    "person_detected": true,
+    "description": "In this image, we can see a man standing in a kitchen. He is wearing a gray t-shirt and is holding a frying pan in his right hand. The kitchen has black cabinets and a red countertop. On the countertop, there are various kitchen utensils hanging on the wall. There is a microwave oven and a clock on the left side of the image. The man appears to be looking at the camera with a serious expression.",
+    "person_attributes": {
+        "pose_category": "side",
+        "upper_body_visible": true,
+        "lower_body_visible": false
+    },
+    "model_used": "Florence-2-base",
+    "confidence_notes": "Edge case evaluation."
+}

@@ -1,0 +1,12 @@
+{
+    "image": "person_crossed_arms.jpg",
+    "person_detected": true,
+    "description": "The image shows three young women sitting on a couch in a living room. They are all wearing long, dark purple dresses and are engaged in a conversation on their phones. The woman on the left is holding a walkie-talkie in her hand and appears to be speaking, while the woman in the middle is smiling and looking at the camera. The third woman is sitting on the right side of the couch, wearing a black dress and holding a purse. The room has a beige wall with a round light fixture hanging above it. There are two armchairs in the background.",
+    "person_attributes": {
+        "pose_category": "side",
+        "upper_body_visible": false,
+        "lower_body_visible": false
+    },
+    "model_used": "Florence-2-base",
+    "confidence_notes": "Edge case evaluation."
+}
