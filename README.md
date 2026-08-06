@@ -196,11 +196,10 @@ This solution follows the assessment guidelines:
 
 ---
 
-# Future Improvements
 
-Some improvements I would like to make in future versions include:
 
-- Using structured prompting instead of rule-based parsing.
-- Integrating a dedicated human pose estimation model.
-- Improving garment attribute extraction.
-- Adding confidence scores for each extracted attribute.
+# Limitations
+
+Florence-2 performs well on most standard images, but some challenging edge-case images may produce inaccurate descriptions. Since the final attributes are extracted from these descriptions using rule-based parsing, the overall accuracy depends on the quality of the generated captions.
+
+A dedicated pose estimation or human parsing model could improve the performance for these cases.
