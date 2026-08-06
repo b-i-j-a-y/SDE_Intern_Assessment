@@ -10,76 +10,59 @@
 
 This repository contains my solutions for the SDE Intern Technical Assessment.
 
-Currently Completed:
+At the moment, I have completed **Question 1**, which focuses on understanding garment and person images using a Vision-Language Model.
 
-- ✅ Q1 – Garment & Person Understanding using a Vision-Language Model (Florence-2)
-
-Remaining Questions:
-
-- ⏳ Q2 – Human Parsing & Garment Segmentation
-- ⏳ Q3 – Virtual Try-On
-- ⏳ Q4 – Evaluation Pipeline
-- ⏳ Q5 – Edge Cases & Guardrails
+The remaining questions (Q2–Q5) will be added as I progress through the assessment.
 
 ---
 
-# Q1 Overview
+# Question 1 – Garment & Person Understanding
 
-The objective of Q1 is to extract structured information from garment and person images using a Vision-Language Model.
+For this task, I used **Microsoft Florence-2-base**, an open-source Vision-Language Model, to understand both garment and person images.
 
-The pipeline performs:
+The workflow includes:
 
-- Garment attribute extraction
-- Person pose estimation
-- Upper body visibility detection
-- Lower body visibility detection
-- JSON generation for each image pair
+- Generating captions for garment images
+- Extracting garment attributes such as type, sleeve length, neckline, color, and pattern
+- Understanding person images
+- Identifying pose and body visibility
+- Handling the provided edge-case images
+- Saving the results as JSON files
 
 ---
 
 # Model Used
 
-### Florence-2-base
+**Model:** Florence-2-base
 
-Repository:
+**Repository:**
 https://huggingface.co/microsoft/Florence-2-base
 
-Purpose:
+**Purpose:**
 
-- Image Captioning
-- Vision-Language Understanding
-- Garment Description
-- Person Description
+- Image captioning
+- Garment understanding
+- Person understanding
 
-License:
-
-MIT License
+**License:** MIT License
 
 ---
 
-# Programming Language
+# Technologies Used
 
 - Python 3.13
+- PyTorch
+- Transformers
+- Pillow
+- Hugging Face
 
 ---
 
-# Libraries Used
-
-- transformers
-- torch
-- pillow
-- huggingface_hub
-- safetensors
-- einops
-
----
-
-# Folder Structure
+# Project Structure
 
 ```
-SDE_Interen_Assesment/
+SDE_Intern_Assessment/
 
-│
 ├── data/
 │   ├── garment/
 │   ├── person/
@@ -100,14 +83,14 @@ SDE_Interen_Assesment/
 
 # Installation
 
-Create a virtual environment
+Create a virtual environment:
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-Install dependencies
+Install the required packages:
 
 ```bash
 pip install -r requirements.txt
@@ -115,30 +98,16 @@ pip install -r requirements.txt
 
 ---
 
-# Run
+# Running the Project
 
 ```bash
 python3 q1/main.py
 ```
 
----
-
-# Output
-
-The program generates JSON files inside
+The generated JSON files will be saved inside:
 
 ```
 q1/outputs/
-```
-
-Example:
-
-```
-pair_01.json
-pair_02.json
-pair_03.json
-pair_04.json
-pair_05.json
 ```
 
 ---
@@ -174,35 +143,64 @@ pair_05.json
 
 # Approach
 
-1. Load Florence-2.
-2. Generate detailed captions for garment images.
-3. Extract garment attributes using a rule-based parser.
-4. Generate detailed captions for person images.
-5. Extract pose and visibility information.
-6. Combine both outputs into a structured JSON file.
+The overall workflow is straightforward:
+
+1. Load the Florence-2 model.
+2. Generate captions for garment images.
+3. Extract garment attributes using simple rule-based parsing.
+4. Generate captions for person images.
+5. Extract pose and body visibility information.
+6. Handle the provided edge-case images.
+7. Save all extracted information as structured JSON files.
+
+---
+
+# Edge Cases
+
+The following edge-case images are also processed:
+
+- `person_side_pose.jpg`
+- `person_seated.jpg`
+- `person_crossed_arms.jpg`
+- `no_person.jpg`
+
+Separate JSON files are generated for these images.
 
 ---
 
 # Limitations
 
-- Attribute extraction uses rule-based parsing from Florence descriptions.
-- Results depend on caption quality.
-- Some garment details (neckline, sleeve type) may be unavailable if not described by the model.
+This project uses Florence-2 as a general Vision-Language Model. While it performs well on most standard images, it may produce inaccurate descriptions for some challenging edge cases. Because the attribute extraction is based on the generated captions, the final results depend on the quality of those captions.
+
+A dedicated pose estimation model or human parsing model would improve the robustness of the system.
 
 ---
 
-# Models & Licenses
+# Models & License
 
 | Model | Purpose | License |
-|-------|---------|---------|
+|--------|---------|---------|
 | Florence-2-base | Vision-Language Understanding | MIT |
 
 ---
 
-# Notes
+# Assessment Compliance
 
-This project uses only open-source models with freely downloadable weights, in accordance with the assessment requirements.
+This solution follows the assessment guidelines:
 
-No paid or hosted inference APIs were used.
+- Uses only open-source models.
+- No paid or hosted APIs were used.
+- All outputs are generated locally.
+- Results are saved in JSON format.
+- Edge-case images are included in the evaluation.
 
-All inference was performed locally.
+---
+
+# Future Improvements
+
+Some improvements I would like to make in future versions include:
+
+- Using structured prompting instead of rule-based parsing.
+- Integrating a dedicated human pose estimation model.
+- Improving garment attribute extraction.
+- Adding confidence scores for each extracted attribute.
