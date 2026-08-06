@@ -1,0 +1,10 @@
+{
+    "image": "person_03.png",
+    "category": "person",
+    "description": "The image shows a young woman standing in front of a plain white background. She is wearing a white tank top with thin straps and a scoop neckline. The tank top is sleeveless and appears to be made of a soft, lightweight fabric. She has a pair of light blue jeans with a high-waisted fit and a button-down front. Her hair is styled in loose waves and she is looking directly at the camera with a serious expression.",
+    "attributes": {
+        "pose": "back",
+        "upper_body_visible": true,
+        "lower_body_visible": true
+    }
+}

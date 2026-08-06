@@ -1,0 +1,12 @@
+{
+    "image": "garment_05.jpg",
+    "category": "garment",
+    "description": "The image is of a white t-shirt with a colorful floral design on the front. The design features a variety of colorful flowers and leaves in different shades of pink, orange, yellow, blue, and purple. The flowers are arranged in a symmetrical pattern, with some overlapping each other. The leaves are green and have a leafy texture. The shirt has a round neckline and short sleeves. The brand name \"EA7\" is printed in black on the top left corner of the shirt. The background is plain white.",
+    "attributes": {
+        "type": "t-shirt",
+        "sleeve_length": "short",
+        "neckline": "round",
+        "primary_color": "white",
+        "pattern": "floral"
+    }
+}

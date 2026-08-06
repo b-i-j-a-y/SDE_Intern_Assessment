@@ -1,0 +1,12 @@
+{
+    "image": "garment_01.jpg",
+    "category": "garment",
+    "description": "The image is of a light purple t-shirt with a round neckline and short sleeves. On the front of the shirt, there is a large white Vans logo in the center. The logo is rectangular in shape and has the word \"VANS\" written in a bold, sans-serif font. The shirt appears to be made of a soft, comfortable fabric and has a relaxed fit. The sleeves are slightly rolled up at the shoulders, giving the shirt a casual, relaxed look.",
+    "attributes": {
+        "type": "t-shirt",
+        "sleeve_length": "short",
+        "neckline": "round",
+        "primary_color": "light purple",
+        "pattern": "logo"
+    }
+}

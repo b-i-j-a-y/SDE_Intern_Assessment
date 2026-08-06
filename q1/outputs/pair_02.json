@@ -1,0 +1,18 @@
+{
+    "person_image": "person_02.png",
+    "garment_image": "garment_02.jpg",
+    "garment_attributes": {
+        "type": "blouse",
+        "sleeve_length": "long",
+        "neckline": "high",
+        "primary_color": "unknown",
+        "pattern": "floral"
+    },
+    "person_attributes": {
+        "pose_category": "back",
+        "upper_body_visible": true,
+        "lower_body_visible": true
+    },
+    "model_used": "Florence-2-base",
+    "confidence_notes": "Generated using Florence-2 and rule-based parsing."
+}

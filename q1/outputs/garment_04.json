@@ -1,0 +1,12 @@
+{
+    "image": "garment_04.jpg",
+    "category": "garment",
+    "description": "The image is of a black t-shirt with a graphic design on the front. The design features a portrait of a woman with long dark hair and a white veil covering her head. She is looking off to the side with a serious expression on her face. Above the portrait, there is text that reads \"I DON'T CARE\" in white capital letters. The overall style of the design is simple and minimalistic.",
+    "attributes": {
+        "type": "t-shirt",
+        "sleeve_length": "unknown",
+        "neckline": "unknown",
+        "primary_color": "black",
+        "pattern": "graphic"
+    }
+}

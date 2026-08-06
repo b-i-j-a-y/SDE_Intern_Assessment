@@ -1,0 +1,12 @@
+{
+    "image": "garment_03.jpg",
+    "category": "garment",
+    "description": "The image is of a yellow crop top. The top has a square neckline with thin straps that cross over the shoulders. The fabric appears to be ribbed and has a ribbed texture. There are three brown buttons on the front of the top, each with a unique design. The buttons are arranged in a symmetrical pattern, with the largest button in the center and two smaller buttons on either side. The overall style of the outfit is casual and feminine.",
+    "attributes": {
+        "type": "crop top",
+        "sleeve_length": "sleeveless",
+        "neckline": "square",
+        "primary_color": "yellow",
+        "pattern": "plain"
+    }
+}

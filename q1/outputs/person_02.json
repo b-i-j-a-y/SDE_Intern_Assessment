@@ -1,0 +1,10 @@
+{
+    "image": "person_02.png",
+    "category": "person",
+    "description": "The image is a portrait of a young woman with pink hair. She is standing in front of a plain pink background. The woman is wearing a white tank top and a bright yellow mini skirt. She has her hands in her pockets and is looking directly at the camera with a serious expression. Her hair is styled in loose waves and falls over her shoulders. The overall aesthetic of the image is minimalistic and modern.",
+    "attributes": {
+        "pose": "back",
+        "upper_body_visible": true,
+        "lower_body_visible": true
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "person_image": "person_04.png",
+    "garment_image": "garment_04.jpg",
+    "garment_attributes": {
+        "type": "t-shirt",
+        "sleeve_length": "unknown",
+        "neckline": "unknown",
+        "primary_color": "black",
+        "pattern": "graphic"
+    },
+    "person_attributes": {
+        "pose_category": "back",
+        "upper_body_visible": true,
+        "lower_body_visible": true
+    },
+    "model_used": "Florence-2-base",
+    "confidence_notes": "Generated using Florence-2 and rule-based parsing."
+}

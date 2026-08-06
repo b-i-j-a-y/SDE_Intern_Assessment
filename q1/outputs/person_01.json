@@ -1,0 +1,10 @@
+{
+    "image": "person_01.png",
+    "category": "person",
+    "description": "The image is a portrait of a young woman wearing a white tank top and blue jeans. She is standing in front of a plain beige background and is posing with her body slightly turned to the side. Her hair is styled in loose waves and she is looking directly at the camera with a serious expression. The tank top is sleeveless and has a scoop neckline. The jeans are high-waisted and have a button-down front. The woman is wearing minimal makeup and her posture is confident and relaxed.",
+    "attributes": {
+        "pose": "side",
+        "upper_body_visible": true,
+        "lower_body_visible": true
+    }
+}

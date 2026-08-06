@@ -1,0 +1,18 @@
+{
+    "person_image": "person_03.png",
+    "garment_image": "garment_03.jpg",
+    "garment_attributes": {
+        "type": "crop top",
+        "sleeve_length": "sleeveless",
+        "neckline": "square",
+        "primary_color": "yellow",
+        "pattern": "plain"
+    },
+    "person_attributes": {
+        "pose_category": "back",
+        "upper_body_visible": true,
+        "lower_body_visible": true
+    },
+    "model_used": "Florence-2-base",
+    "confidence_notes": "Generated using Florence-2 and rule-based parsing."
+}

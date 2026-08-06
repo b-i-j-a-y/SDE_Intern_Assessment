@@ -1,0 +1,10 @@
+{
+    "image": "person_05.png",
+    "category": "person",
+    "description": "The image is a portrait of a young man standing in front of a plain white background. He is wearing a white tank top and blue jeans. His body is turned slightly to the side and he is looking directly at the camera with a serious expression on his face. His hair is styled in a messy yet fashionable manner and he has a slight smile on his lips. The overall mood of the image is casual and relaxed.",
+    "attributes": {
+        "pose": "side",
+        "upper_body_visible": true,
+        "lower_body_visible": true
+    }
+}

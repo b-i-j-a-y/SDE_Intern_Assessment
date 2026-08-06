@@ -1,0 +1,10 @@
+{
+    "image": "person_04.png",
+    "category": "person",
+    "description": "The image is a full-length portrait of a young African-American woman posing in a studio. She is wearing a bright yellow crop top and a white mini skirt. Her hair is styled in an afro and she is looking directly at the camera with a serious expression. The background is a plain beige color. The woman is standing with one hand on her hip and the other resting on her thigh.",
+    "attributes": {
+        "pose": "back",
+        "upper_body_visible": true,
+        "lower_body_visible": true
+    }
+}

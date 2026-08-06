@@ -1,0 +1,12 @@
+{
+    "image": "garment_02.jpg",
+    "category": "garment",
+    "description": "The image is of a long-sleeved blouse with a high neckline and a ruffled collar. The blouse is made of a black fabric with a colorful floral print in shades of red, orange, and blue. The print features large red and blue flowers with green leaves scattered throughout. The collar is tied in a bow at the back with a black ribbon. The sleeves are long and flowy, with ruffles on the cuffs. The overall style of the blouse appears to be feminine and feminine.",
+    "attributes": {
+        "type": "blouse",
+        "sleeve_length": "long",
+        "neckline": "high",
+        "primary_color": "unknown",
+        "pattern": "floral"
+    }
+}
