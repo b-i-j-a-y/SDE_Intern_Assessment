@@ -1,17 +1,23 @@
-# macOS
-.DS_Store
-
 # Python
 __pycache__/
 *.pyc
 
-# Virtual Environment
+# Virtual environments
 venv/
+venv311/
 
-# VS Code
-.vscode/
+# macOS
+.DS_Store
+
+# Python cache
+.pytest_cache/
+
+# Large model files
+*.pth
+*.pt
+*.ckpt
 
 # Hugging Face cache
 .cache/
-*.bin
-*.safetensors
+GroundingDINO/
+SCHP/
