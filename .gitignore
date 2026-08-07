@@ -1,4 +1,12 @@
-# Python
+# Q3 models
+q3/CatVTON_NEW/.cache/
+q3/CatVTON_NEW/**/*.bin
+q3/CatVTON_NEW/**/*.pth
+q3/CatVTON_NEW/**/*.safetensors
+q3/IDM-VTON.zip
+
+# Huggingface cache
+.cache/# Python
 __pycache__/
 *.pyc
 
