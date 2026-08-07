@@ -1,6 +1,9 @@
 # Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.pytest_cache/
 
 # Virtual environments
 venv/
@@ -9,15 +12,10 @@ venv311/
 # macOS
 .DS_Store
 
-# Python cache
-.pytest_cache/
-
 # Large model files
 *.pth
 *.pt
 *.ckpt
 
 # Hugging Face cache
-.cache/
-GroundingDINO/
-SCHP/
+Miniconda3-latest-Linux-x86_64.sh
