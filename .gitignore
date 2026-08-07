@@ -1,6 +1,28 @@
 # Python
 __pycache__/
 *.pyc
+
+# Virtual environment
+venv/
+venv311/
+
+# ML models
+GroundingDINO/
+SCHP/
+q3/CatVTON/
+q3/CatVTON_NEW/
+q3/IDM-VTON.zip
+
+# Model weights
+*.pth
+*.pt
+*.bin
+*.safetensors
+
+# Cache
+.cache/# Python
+__pycache__/
+*.pyc
 *.pyo
 *.pyd
 .pytest_cache/
