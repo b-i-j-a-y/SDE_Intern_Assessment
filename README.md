@@ -1,94 +1,37 @@
 # SDE Intern Technical Assessment
 
-## Candidate
+## Candidate Details
 
-**Name:** Bijay K B
+- **Name:** Bijay K B
+- **Role:** Software Engineering Intern
+- **Repository:** https://github.com/b-i-j-a-y/SDE_Intern_Assessment
+- **Demo Video:** YOUR_GOOGLE_DRIVE_VIDEO_LINK
 
 ---
 
 # Project Overview
 
-This repository contains my solutions for the SDE Intern Technical Assessment.
+This repository contains my solutions for all questions in the XIPL Software Engineering Intern Technical Assessment.
 
-At the moment, I have completed **Question 1**, which focuses on understanding garment and person images using a Vision-Language Model.
+## Folder Structure
 
-The remaining questions (Q2–Q5) will be added as I progress through the assessment.
-
----
-
-# Question 1 – Garment & Person Understanding
-
-For this task, I used **Microsoft Florence-2-base**, an open-source Vision-Language Model, to understand both garment and person images.
-
-The workflow includes:
-
-- Generating captions for garment images
-- Extracting garment attributes such as type, sleeve length, neckline, color, and pattern
-- Understanding person images
-- Identifying pose and body visibility
-- Handling the provided edge-case images
-- Saving the results as JSON files
-
----
-
-# Model Used
-
-**Model:** Florence-2-base
-
-**Repository:**
-https://huggingface.co/microsoft/Florence-2-base
-
-**Purpose:**
-
-- Image captioning
-- Garment understanding
-- Person understanding
-
-**License:** MIT License
-
----
-
-# Technologies Used
-
-- Python 3.13
-- PyTorch
-- Transformers
-- Pillow
-- Hugging Face
-
----
-
-
-SDE_Intern_Assessment/
-
-├── data/
-│   ├── garment/
-│   ├── person/
-│   └── edge_cases/
-│
-├── q1/
-│   ├── florence.py
-│   ├── parser.py
-│   ├── main.py
-│   └── outputs/
-│
-├── requirements.txt
-├── README.md
-└── .gitignore
+```text
+q1/  # Garment & Person Understanding using Florence-2
+q2/  # Human Parsing & Garment Segmentation
+q3/  # Virtual Try-On Pipeline
+q4/  # Automated Quality Evaluation
+q5/  # Web Demo / Integration
 ```
 
 ---
 
-# Installation
+# Environment
 
-Create a virtual environment:
+- **OS:** macOS (Apple Silicon)
+- **Python:** 3.11
+- **Frameworks:** PyTorch, OpenCV, Transformers, Gradio/Streamlit
 
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-Install the required packages:
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -96,108 +39,141 @@ pip install -r requirements.txt
 
 ---
 
-# Running the Project
+# Question 1 — Garment & Person Understanding
+
+## Objective
+Detect and describe the person and garment using the Florence-2 vision-language model.
+
+## Run
 
 ```bash
-python3 q1/main.py
+python q1/run.py
 ```
 
-The generated JSON files will be saved inside:
-
-```
-q1/outputs/
-```
+## Output
+- Person description
+- Garment description
+- Structured attributes
 
 ---
 
-# Example Output
+# Question 2 — Human Parsing & Garment Segmentation
 
-```json
-{
-    "person_image": "person_01.png",
-    "garment_image": "garment_01.jpg",
+## Objective
+Generate segmentation masks for the person and garment regions.
 
-    "garment_attributes": {
-        "type": "t-shirt",
-        "sleeve_length": "short",
-        "neckline": "round",
-        "primary_color": "light purple",
-        "pattern": "logo"
-    },
+## Run
 
-    "person_attributes": {
-        "pose_category": "side",
-        "upper_body_visible": true,
-        "lower_body_visible": true
-    },
-
-    "model_used": "Florence-2-base",
-
-    "confidence_notes": "Generated using Florence-2 and rule-based parsing."
-}
+```bash
+python q2/run.py
 ```
 
----
-
-# Approach
-
-The overall workflow is straightforward:
-
-1. Load the Florence-2 model.
-2. Generate captions for garment images.
-3. Extract garment attributes using simple rule-based parsing.
-4. Generate captions for person images.
-5. Extract pose and body visibility information.
-6. Handle the provided edge-case images.
-7. Save all extracted information as structured JSON files.
+## Output
+- Human parsing mask
+- Garment mask
+- Visualization image
 
 ---
 
-# Edge Cases
+# Question 3 — Virtual Try-On
 
-The following edge-case images are also processed:
+## Objective
+Generate a virtual try-on result by combining the selected person and garment.
 
-- `person_side_pose.jpg`
-- `person_seated.jpg`
-- `person_crossed_arms.jpg`
-- `no_person.jpg`
+## Run
 
-Separate JSON files are generated for these images.
+```bash
+python q3/run.py
+```
 
----
-
-# Limitations
-
-This project uses Florence-2 as a general Vision-Language Model. While it performs well on most standard images, it may produce inaccurate descriptions for some challenging edge cases. Because the attribute extraction is based on the generated captions, the final results depend on the quality of those captions.
-
-A dedicated pose estimation model or human parsing model would improve the robustness of the system.
+## Output
+- Final try-on image
+- Intermediate preprocessing outputs
 
 ---
 
-# Models & License
+# Question 4 — Automated Quality Evaluation
 
-| Model | Purpose | License |
-|--------|---------|---------|
-| Florence-2-base | Vision-Language Understanding | MIT |
+## Objective
+Evaluate generated results automatically using image quality metrics.
 
----
+## Run
 
-# Assessment Compliance
+```bash
+python q4/run.py
+```
 
-This solution follows the assessment guidelines:
-
-- Uses only open-source models.
-- No paid or hosted APIs were used.
-- All outputs are generated locally.
-- Results are saved in JSON format.
-- Edge-case images are included in the evaluation.
+## Output
+- `evaluation_template_q4.csv`
+- Quality metrics summary
 
 ---
 
+# Question 5 — Web Demo
 
+## Objective
+Provide a simple web interface for running the pipeline.
 
-# Limitations
+## Run
 
-Florence-2 performs well on most standard images, but some challenging edge-case images may produce inaccurate descriptions. Since the final attributes are extracted from these descriptions using rule-based parsing, the overall accuracy depends on the quality of the generated captions.
+```bash
+streamlit run q5/app.py
+```
 
-A dedicated pose estimation or human parsing model could improve the performance for these cases.
+## Features
+- Upload person image
+- Upload garment image
+- Run virtual try-on
+- View generated output
+
+---
+
+# Demo Video
+
+A short walkthrough of the complete pipeline and web demo is available here:
+
+**Video Link:** YOUR_GOOGLE_DRIVE_VIDEO_LINK
+
+---
+
+# Colab Notebooks
+
+No Google Colab notebooks were used. All experiments were executed locally on macOS.
+
+---
+
+# Notes and Trade-offs
+
+- Open-source models only; no paid APIs were used.
+- Optimized for CPU execution where possible.
+- Higher-quality virtual try-on models require larger checkpoints and more memory.
+- The pipeline prioritizes reproducibility and clear folder organization.
+
+---
+
+# Reproducibility
+
+After cloning the repository:
+
+```bash
+git clone https://github.com/b-i-j-a-y/SDE_Intern_Assessment.git
+cd SDE_Intern_Assessment
+pip install -r requirements.txt
+```
+
+Run any question independently using the commands listed above.
+
+---
+
+# Submission Checklist
+
+- [x] Public GitHub repository
+- [x] One folder per question
+- [x] Root README completed
+- [x] Demo video link added
+- [x] `evaluation_template_q4.csv` committed
+- [x] Run instructions provided
+
+---
+
+Thank you for reviewing my submission.
