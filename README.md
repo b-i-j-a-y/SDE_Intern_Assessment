@@ -5,8 +5,7 @@
 - **Name:** Bijay K B
 - **Role:** Software Engineering Intern
 - **Repository:** https://github.com/b-i-j-a-y/SDE_Intern_Assessment
-- **Demo Video:** YOUR_GOOGLE_DRIVE_VIDEO_LINK
-
+- **Demo Video:**https://drive.google.com/file/d/1p6oEkqpZxlT3-tY7Mv15hfpE22Wj8jGc/view?usp=drive_link
 ---
 
 # Project Overview
