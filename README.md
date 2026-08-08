@@ -60,6 +60,46 @@ https://huggingface.co/microsoft/Florence-2-base
 
 # Project Structure
 
+Pipeline Architecture
+
+The Q1 pipeline is designed as a simple modular workflow where garment understanding and person understanding are performed independently and then merged into a final structured JSON output.
+
+Garment Image
+      |
+      v
++------------------+
+|    Florence-2    |
++------------------+
+      |
+      v
+Garment Attributes
+(type, sleeve, neckline, color, pattern)
+
+
+Person Image
+      |
+      v
++------------------+
+|    Florence-2    |
++------------------+
+      |
+      v
+Person Attributes
+(pose, upper body, lower body)
+
+
+Garment Attributes + Person Attributes
+                 |
+                 v
+        Merge / Build JSON
+                 |
+                 v
+      pair_01.json
+      pair_02.json
+      pair_03.json
+      pair_04.json
+      pair_05.json
+
 ```
 SDE_Intern_Assessment/
 
