@@ -1,110 +1,60 @@
-# Q5 - Virtual Try-On Evaluation System
+# Q5 — Streamlit Web Demo
 
-## Overview
+## Objective
 
-This project implements a modular Virtual Try-On evaluation pipeline.
+The goal of Q5 is to provide a lightweight interactive web interface that demonstrates the complete virtual try-on workflow.
 
-The system takes a person image and garment image as input and processes them through different computer vision modules to generate and evaluate a virtual try-on result.
+The demo integrates:
 
-The implementation is designed with separate modules for detection, pose estimation, try-on generation, and evaluation.
-
----
-
-## Features
-
-- Person and garment image processing
-- Object detection module
-- Human pose analysis
-- Virtual try-on pipeline
-- Result evaluation
-- Streamlit-based user interface
-- Modular architecture for easy extension
+- Q1 attribute extraction
+- Q2 parsing visualization
+- Q3 try-on results
+- Q4 quality evaluation
+- Content-based guardrails
 
 ---
 
-## System Pipeline
-          Input Images
+# Technologies Used
 
-    Person Image + Garment Image
-                |
-                v
-
-    +---------------------+
-    |  Detection Module   |
-    |  Image Analysis     |
-    +---------------------+
-
-                |
-                v
-
-    +---------------------+
-    |   Pose Module       |
-    | Human Body Analysis |
-    +---------------------+
-
-                |
-                v
-
-    +---------------------+
-    |   Try-On Module     |
-    | Garment Transfer    |
-    +---------------------+
-
-                |
-                v
-
-    +---------------------+
-    | Evaluation Module   |
-    | Quality Assessment  |
-    +---------------------+
-
-                |
-                v
-
-      Virtual Try-On Result.   
-
-
-      
----
-
-## Module Description
-
-### detector.py
-
-Handles image detection and preprocessing operations required for the try-on pipeline.
-
-### pose.py
-
-Responsible for extracting human pose information and body-related features.
-
-### tryon.py
-
-Contains the main virtual try-on processing logic that combines the person and garment information.
-
-### evaluation.py
-
-Provides evaluation utilities to analyze the generated output quality.
-
-### utils.py
-
-Contains helper functions shared across different modules.
+- **Streamlit** — web interface
+- **Florence-2** — attribute extraction
+- **OpenCV** — image handling
+- **Pillow** — image processing
+- **PyTorch** — model backend
+- **NumPy** — utility operations
 
 ---
 
-## Technology Stack
+# How to Run
 
-- Python
-- Computer Vision
-- Deep Learning
-- PyTorch
-- OpenCV
-- Streamlit
-
----
-
-## Running the Application
-
-### Install Dependencies
+Run from the **project root**.
 
 ```bash
-pip install -r requirements.txt
+streamlit run q5/app.py
+```
+
+After launching, open:
+
+```text
+http://localhost:8501
+```
+
+---
+
+# Features Implemented
+
+- Upload person image
+- Upload garment image
+- Florence-2 attribute extraction
+- Display available Q2 parsing outputs
+- Content-based no-person rejection
+- Side-pose warning
+- Seated-pose warning
+- Estimated processing time
+- Quality score display
+
+---
+
+# Pipeline
+
+<Code value=
