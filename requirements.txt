@@ -15,3 +15,5 @@ onnxruntime
 scikit-image
 scipy
 matplotlib
+diffusers
+segment-anything
