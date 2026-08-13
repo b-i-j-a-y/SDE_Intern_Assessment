@@ -1,6 +1,6 @@
 pair_id,garment_score,garment_grade,identity_score,identity_status,judge_score,judge_verdict,judge_reason
-pair_01,0.2477,Poor,0.9187,Success,10,Excellent,Garment appears naturally worn.; Texture and garment details detected.; No obvious artifacts mentioned.
-pair_02,0.3353,Poor,0.9428,Success,10,Excellent,Garment appears naturally worn.; Texture and garment details detected.; No obvious artifacts mentioned.
-pair_03,0.3911,Poor,0.9117,Success,9,Excellent,Garment appears naturally worn.; Texture transfer not clearly visible.; No obvious artifacts mentioned.
-pair_04,0.3655,Poor,0.943,Success,10,Excellent,Garment appears naturally worn.; Texture and garment details detected.; No obvious artifacts mentioned.
-pair_05,0.2997,Poor,0.8339,Success,10,Excellent,Garment appears naturally worn.; Texture and garment details detected.; No obvious artifacts mentioned.
+pair_01,0.2474,Poor,0.9187,Success,10,Excellent,Garment appears naturally worn.; Texture and garment details detected.; No obvious artifacts mentioned.
+pair_02,0.3373,Poor,0.9428,Success,10,Excellent,Garment appears naturally worn.; Texture and garment details detected.; No obvious artifacts mentioned.
+pair_03,0.3917,Poor,0.9117,Success,9,Excellent,Garment appears naturally worn.; Texture transfer not clearly visible.; No obvious artifacts mentioned.
+pair_04,0.1868,Poor,-0.0439,Success,10,Excellent,Garment appears naturally worn.; Texture and garment details detected.; No obvious artifacts mentioned.
+pair_05,0.3434,Poor,0.1642,Success,10,Excellent,Garment appears naturally worn.; Texture and garment details detected.; No obvious artifacts mentioned.
