@@ -1,78 +1,67 @@
-# ==================================================
-# Q5 Pose Guardrail Module
-# ==================================================
-
-from pathlib import Path
+import cv2
+import numpy as np
 
 
 def detect_pose(image_path):
     """
-    Simple pose guardrail.
+    Lightweight content-based pose guardrail.
 
-    Later this can be replaced with:
-    - OpenPose
-    - MediaPipe Pose
-    - Human Parsing model
-
-    Current version uses filename-based edge case handling
-    because Q2 already generated edge-case samples.
+    Heuristics:
+    - wide aspect ratio + shorter body → side pose
+    - upper body lower in frame → seated pose
+    - otherwise front pose
     """
 
-    image_name = Path(image_path).stem.lower()
+    image = cv2.imread(str(image_path))
 
-
-    # No person case
-
-    if "no_person" in image_name:
-
+    if image is None:
         return {
-            "pose_category": "none",
-            "warning": "No person detected. Try-on cannot continue.",
-            "allow_tryon": False
+            "pose_category": "unknown",
+            "warning": "Could not analyze pose.",
+            "allow_tryon": True,
         }
 
+    h, w = image.shape[:2]
 
+    aspect_ratio = w / h
 
-    # Side pose case
+    # Foreground estimate
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    _, thresh = cv2.threshold(gray, 245, 255, cv2.THRESH_BINARY_INV)
 
-    if "side" in image_name:
+    ys, xs = np.where(thresh > 0)
 
+    if len(xs) == 0:
+        return {
+            "pose_category": "unknown",
+            "warning": "Pose could not be analyzed.",
+            "allow_tryon": True,
+        }
+
+    top = ys.min()
+    bottom = ys.max()
+
+    height_ratio = (bottom - top) / h
+    top_ratio = top / h
+
+    # Side pose heuristic
+    if aspect_ratio > 0.9 and height_ratio < 0.65:
         return {
             "pose_category": "side",
             "warning": "Side pose may reduce try-on accuracy.",
-            "allow_tryon": True
+            "allow_tryon": True,
         }
 
-
-
-    # Seated case
-
-    if "seated" in image_name:
-
+    # Seated pose heuristic
+    if top_ratio > 0.18:
         return {
             "pose_category": "seated",
             "warning": "Seated pose may reduce try-on quality.",
-            "allow_tryon": True
+            "allow_tryon": True,
         }
-
-
-
-    # Crossed arms case
-
-    if "crossed" in image_name:
-
-        return {
-            "pose_category": "crossed_arms",
-            "warning": "Arms may affect garment generation.",
-            "allow_tryon": True
-        }
-
-
-
-    # Normal case
 
     return {
         "pose_category": "front",
         "warning": None,
-        "allow_tryon": True
+        "allow_tryon": True,
     }
