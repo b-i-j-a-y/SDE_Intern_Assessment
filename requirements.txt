@@ -1,0 +1,17 @@
+torch
+torchvision
+torchaudio
+transformers
+accelerate
+sentencepiece
+Pillow
+opencv-python
+numpy
+pandas
+streamlit
+open-clip-torch
+insightface
+onnxruntime
+scikit-image
+scipy
+matplotlib
