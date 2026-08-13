@@ -1,25 +1,60 @@
-### Garment Fidelity
+# Q4 — Automated Quality Evaluation
 
-- Model: OpenCLIP ViT-B-32
-- Metric: Cosine Similarity between garment mask and generated garment.
+## Objective
 
-### Identity Preservation
+The goal of Q4 is to automatically evaluate the virtual try-on results generated in **Q3**.
 
-- Model: InsightFace (Buffalo-L)
-- Metric: Face embedding cosine similarity.
+The evaluation focuses on:
 
-### VLM-as-Judge
+- **Garment Fidelity**
+- **Identity Preservation**
+- **Overall Visual Quality**
 
-Model:
-- Microsoft Florence-2 Base
+The pipeline combines embedding-based metrics with a Florence-2 based visual judge.
 
-Rubric:
+---
 
-- Fit Realism (4 pts)
-- Texture Transfer (3 pts)
-- Artifact Detection (3 pts)
+# Models Used
 
-Final Score:
-1–10
+### 1. OpenCLIP ViT-B-32
+Used to measure **garment similarity** between the reference garment and the generated try-on result.
 
-The Florence-2 model generates a detailed description of the generated image. A rule-based rubric analyzes the description to assign scores for fit realism, texture preservation, and visible artifacts.
+### 2. InsightFace (Buffalo-L)
+Used to measure **identity preservation** using face embeddings.
+
+### 3. Florence-2 Base
+Used as a **Vision-Language Judge (VLM-as-Judge)** to analyze the generated image and produce a descriptive assessment.
+
+---
+
+# Technologies
+
+- Python 3.11
+- PyTorch
+- OpenCLIP
+- InsightFace
+- ONNX Runtime
+- Pandas
+- Pillow
+- NumPy
+
+---
+
+# Evaluation Pairs
+
+The evaluation uses:
+
+## Official Pairs
+
+- pair_01
+- pair_02
+- pair_03
+
+## Candidate-Sourced Pairs
+
+- pair_04
+- pair_05
+
+Pair definitions are stored in:
+
+```text id=
