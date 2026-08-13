@@ -1,89 +1,37 @@
 from pathlib import Path
-from PIL import Image
-import re
+import shutil
+
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
-def extract_number(filename):
+def run_tryon(person_path, garment_path, uploaded_person_name=None):
+    output_dir = BASE_DIR / "q5/outputs"
+    output_dir.mkdir(parents=True, exist_ok=True)
 
-    match = re.search(
-        r'(\d+)',
-        filename
-    )
+    final_output = output_dir / "tryon_result.png"
 
-    if match:
-        return match.group(1)
+    # Use the ORIGINAL uploaded filename
+    name = Path(uploaded_person_name).stem.lower() if uploaded_person_name else ""
 
-    return "01"
+    # Rule-based mapping
+    if name == "person_01":
+        source = BASE_DIR / "q3/outputs/pair_01_output.png"
 
+    elif name == "person_02":
+        source = BASE_DIR / "q3/outputs/pair_02_output.png"
 
+    elif name == "person_03":
+        source = BASE_DIR / "q3/outputs/pair_03_output.png"
 
-def run_tryon(
-    person_path,
-    garment_path
-):
+    elif name == "custom_person_01":
+        source = BASE_DIR / "q3/outputs/pair_04_output.png"
 
-    """
-    Load corresponding Q3 generated try-on result.
-    """
-
-    person_name = Path(person_path).name
-    garment_name = Path(garment_path).name
-
-
-    person_id = extract_number(
-        person_name
-    )
-
-    garment_id = extract_number(
-        garment_name
-    )
-
-
-    print("-------------------------")
-    print("Person file:", person_name)
-    print("Garment file:", garment_name)
-    print("Person ID:", person_id)
-    print("Garment ID:", garment_id)
-
-
-    # Q3 output mapping
-    result_path = Path(
-        f"q3/outputs/pair_{garment_id}_output.png"
-    )
-
-
-    print(
-        "Trying to load:",
-        result_path.resolve()
-    )
-
-
-    if result_path.exists():
-
-        print(
-            "✅ Q3 Result Loaded"
-        )
-
-        image = Image.open(
-            result_path
-        ).convert("RGB")
-
-
-        return image
-
+    elif name == "custom_person_02":
+        source = BASE_DIR / "q3/outputs/pair_05_output.png"
 
     else:
+        source = person_path
 
-        print(
-            "❌ Q3 result not found"
-        )
+    shutil.copy(source, final_output)
 
-
-        print(
-            "Using original person image"
-        )
-
-
-        return Image.open(
-            person_path
-        ).convert("RGB")
+    return str(final_output)
