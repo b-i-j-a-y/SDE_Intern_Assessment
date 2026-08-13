@@ -1,106 +1,55 @@
-# Q3 – End-to-End Virtual Try-On using CatVTON
+# Q3 — Virtual Try-On Pipeline
 
-## Problem Statement
+## Objective
 
-Run an open-source virtual try-on model using the preprocessing outputs from Q2 and generate final try-on results for the required person–garment pairs.
+The goal of Q3 is to generate virtual try-on results by combining:
+
+- a **person image**
+- a **garment image**
+- the structural information produced in **Q2**
+
+The generated outputs are later used for **Q4 automated evaluation** and **Q5 web demonstration**.
 
 ---
 
-## Model Used
+# Models Used
 
-- **Model:** CatVTON
-- **Purpose:** Diffusion-based virtual try-on
+### 1. Florence-2
+Used for garment and person attribute understanding.
+
+### 2. Human Parsing & Agnostic Representation (from Q2)
+Provides body structure and clothing-free upper-body representation.
+
+### 3. CatVTON / IDM-VTON Style Workflow
+Used for the try-on generation stage.
+
+The repository includes the generated outputs for the required evaluation pairs.
 
 ---
 
-## Execution Environment
+# Technologies
 
-- Visual Studio Code (Local)
-- Python 3.13
+- Python 3.11
 - PyTorch
-- Diffusers
-- Transformers
-
----
-
-## Technologies Used
-
-- PyTorch
-- Diffusers
-- Transformers
 - OpenCV
 - Pillow
+- NumPy
 
 ---
 
-## Working Flow
+# Evaluation Pairs
 
-- Prepare the person image.
-- Generate the person mask, parsing map, and agnostic image from Q2.
-- Prepare the garment image.
-- Load the CatVTON model.
-- Run diffusion-based try-on inference.
-- Generate the final virtual try-on image.
-- Save the output for each pair.
+## Official Pairs
 
----
+- pair_01
+- pair_02
+- pair_03
 
-## Pipeline Architecture
+## Candidate-Sourced Pairs
 
-```text
-Person Image
-      |
-      v
-Q2 Preprocessing
-(Mask + Parsing + Agnostic)
-      |
-      v
-CatVTON
-      |
-      v
-Virtual Try-On Output
-```
+- pair_04 → `custom_person_01.png` + `custom_garment_01.png`
+- pair_05 → `custom_person_02.png` + `custom_garment_02.png`
 
----
+Pair definitions are stored in:
 
-## What I Completed
-
-- Integrated the Q2 preprocessing outputs.
-- Loaded and configured the CatVTON model.
-- Ran the try-on inference successfully.
-- Generated final outputs for all required pairs.
-- Saved the outputs in the `outputs/` directory.
-
----
-
-## Constraints Encountered
-
-- Large model downloads
-- Long model loading time
-- High memory usage during inference
-
----
-
-## Workarounds
-
-- Switched from IDM-VTON to the lighter CatVTON model.
-- Reduced input resolution where required.
-- Cleared temporary files during execution.
-
----
-
-## Outputs
-
-The generated outputs are stored in the `outputs/` folder.
-
-- `pair_01_output.png`
-- `pair_02_output.png`
-- `pair_03_output.png`
-- `pair_04_output.png`
-- `pair_05_output.png`
-
----
-
-## Notes
-
-The preprocessing outputs from Q2 (person mask, parsing map, and agnostic image) were used as inputs for the CatVTON inference stage. The final virtual try-on results for all five required pairs are included in the `outputs/` directory.
+```text id=
